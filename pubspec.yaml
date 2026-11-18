@@ -1,0 +1,53 @@
+name: afinador
+description: Diapasón - afinador para guitarra, ukelele y cromático.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.35.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # Audio del micrófono en crudo (PCM) para analizarlo
+  record: '>=5.1.0 <7.0.0'
+  # Ajustes guardados: instrumento, afinación, La de referencia, notación
+  shared_preferences: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.0
+  flutter_native_splash: ^2.4.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+# dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icono.png"
+  remove_alpha_ios: true
+  adaptive_icon_background: "#111827"
+  adaptive_icon_foreground: "assets/icon/icono_primer_plano.png"
+  web:
+    generate: true
+    image_path: "assets/icon/icono.png"
+    background_color: "#111827"
+    theme_color: "#3DDC97"
+
+# dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#111827"
+  image: assets/icon/splash.png
+  android_12:
+    color: "#111827"
+    image: assets/icon/icono_primer_plano.png
+  web: true
